@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ilovam/view/kirish.dart';
+import 'package:ilovam/view/onboarding.dart';
 
 void main() {
   runApp(const MainApp());
@@ -10,6 +10,6 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false, home: Kirish());
+    return MaterialApp(debugShowCheckedModeBanner: false, home: Onboarding());
   }
 }
