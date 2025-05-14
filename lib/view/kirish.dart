@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ilovam/view/chat.dart';
+import 'package:ilovam/view/reset_password.dart';
 import 'package:ilovam/view/rotish.dart';
 
 class Kirish extends StatelessWidget {
@@ -61,9 +62,17 @@ class Kirish extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 15),
-              Text(
-                "Parolni unutdingizmi?",
-                style: TextStyle(color: Colors.white),
+              TextButton(
+                onPressed: () {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(builder: (context) => ResetPassword()),
+                  );
+                },
+                child: Text(
+                  "Parolni unutdingizmi?",
+                  style: TextStyle(color: Colors.white),
+                ),
               ),
 
               SizedBox(
