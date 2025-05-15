@@ -1,9 +1,16 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:ilovam/services/auth_service.dart';
 import 'package:ilovam/view/chat.dart';
 import 'package:ilovam/view/kirish.dart';
 
 class Rotish extends StatelessWidget {
-  const Rotish({super.key});
+  Rotish({super.key});
+  final TextEditingController namesController = TextEditingController();
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+  final TextEditingController newpasswordController = TextEditingController();
+  final AuthService authService = AuthService();
 
   @override
   Widget build(BuildContext context) {
@@ -31,6 +38,7 @@ class Rotish extends StatelessWidget {
               ),
               SizedBox(height: 10),
               TextField(
+                controller: namesController,
                 style: TextStyle(color: Colors.white),
                 decoration: InputDecoration(
                   border: OutlineInputBorder(
@@ -50,6 +58,7 @@ class Rotish extends StatelessWidget {
               ),
               SizedBox(height: 10),
               TextField(
+                controller: emailController,
                 style: TextStyle(color: Colors.white),
                 decoration: InputDecoration(
                   border: OutlineInputBorder(
@@ -69,6 +78,7 @@ class Rotish extends StatelessWidget {
               ),
               SizedBox(height: 10),
               TextField(
+                controller: passwordController,
                 style: TextStyle(color: Colors.white),
                 obscureText: true,
                 decoration: InputDecoration(
@@ -96,6 +106,7 @@ class Rotish extends StatelessWidget {
               ),
               SizedBox(height: 10),
               TextField(
+                controller: newpasswordController,
                 style: TextStyle(color: Colors.white),
                 obscureText: true,
                 decoration: InputDecoration(
@@ -121,11 +132,26 @@ class Rotish extends StatelessWidget {
                       borderRadius: BorderRadius.circular(10),
                     ),
                   ),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => Chat()),
+                  onPressed: () async {
+                    User? user = await authService.signUp(
+                      emailController.text,
+                      passwordController.text,
                     );
+                    if (user != null) {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Chat()),
+                      );
+                    } else {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                          content: Text(
+                            "Ro'yxatdan o'tish xatosi",
+                            style: TextStyle(color: Colors.red),
+                          ),
+                        ),
+                      );
+                    }
                   },
                   child: Text(
                     "Davom etish",

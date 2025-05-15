@@ -12,7 +12,12 @@
           "package_name": "com.example.ilovam"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "704841147760-60h85mei4e7qvh6a2i4ndahthkfqkrvt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyDJPYs_Ypqiaxvb_5LWlYb_9CX0hLKJgQQ"
@@ -20,7 +25,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "704841147760-60h85mei4e7qvh6a2i4ndahthkfqkrvt.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "704841147760-m9f5oialklp4i9251ggq0qf631f95905.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.ilovam"
+              }
+            }
+          ]
         }
       }
     }
