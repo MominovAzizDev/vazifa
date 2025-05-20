@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ilovam/view/accaunts.dart';
 
 class Chat extends StatefulWidget {
   const Chat({super.key});
@@ -72,7 +73,12 @@ class _ChatState extends State<Chat> {
                   children: [
                     SizedBox(height: 20),
                     ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Accaunts()),
+                        );
+                      },
                       child: ListTile(
                         leading: CircleAvatar(
                           backgroundImage: AssetImage("assets/icons/apple.png"),

@@ -164,7 +164,7 @@ class Rotish extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   SizedBox(
-                    width: 140,
+                    width: 120,
                     child: Divider(
                       color: Colors.white,
                       thickness: 1,
@@ -173,7 +173,7 @@ class Rotish extends StatelessWidget {
                   ),
                   Text("yoki", style: TextStyle(color: Colors.white)),
                   SizedBox(
-                    width: 140,
+                    width: 120,
                     child: Divider(
                       color: Colors.white,
                       thickness: 1,

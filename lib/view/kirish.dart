@@ -123,7 +123,7 @@ class Kirish extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   SizedBox(
-                    width: 140,
+                    width: 120,
                     child: Divider(
                       color: Colors.white,
                       thickness: 1,
@@ -132,7 +132,7 @@ class Kirish extends StatelessWidget {
                   ),
                   Text("yoki", style: TextStyle(color: Colors.white)),
                   SizedBox(
-                    width: 140,
+                    width: 120,
                     child: Divider(
                       color: Colors.white,
                       thickness: 1,
@@ -178,26 +178,27 @@ class Kirish extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 60),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    "Akkauntingiz yoqmi?",
-                    style: TextStyle(color: Colors.blueGrey),
-                  ),
-                  TextButton(
-                    onPressed: () {
-                      Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(builder: (context) => Rotish()),
-                      );
-                    },
-                    child: Text(
-                      "Ro’yxatdan o’tish",
-                      style: TextStyle(color: Colors.blue),
+              Center(
+                child: Column(
+                  children: [
+                    Text(
+                      "Akkauntingiz yoqmi?",
+                      style: TextStyle(color: Colors.blueGrey),
                     ),
-                  ),
-                ],
+                    TextButton(
+                      onPressed: () {
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(builder: (context) => Rotish()),
+                        );
+                      },
+                      child: Text(
+                        "Ro’yxatdan o’tish",
+                        style: TextStyle(color: Colors.blue),
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ],
           ),
